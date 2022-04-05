@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+		<h1>Lorem.</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo suscipit quae molestiae enim in hic quasi error repellendus tempore minima mollitia consequatur distinctio quibusdam minus eius sed porro cupiditate sapiente.</p>
 
+	<input type="text" /><input type="text" />
+	
+	<input type="text" /><input type="text" />
+	
+	<input type="text" /><input type="text" />
 </body>
 </html>
