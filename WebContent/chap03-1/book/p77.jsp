@@ -12,8 +12,8 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 	<b>request.getParameter() 메소드 사용</b> <br />
-	name 파라미터 = <%= request.getParameter("name") %> <br />
-	address 파라미터 = <%= request.getParameter("address") %> 
+	name  = <%= request.getParameter("name") %> <br />
+	address  = <%= request.getParameter("address") %> 
 	
 	<p>
 	
@@ -47,7 +47,7 @@ request.setCharacterEncoding("utf-8");
 	</p>
 	
 	<p>
-	<b>request.getParameterMap() 메서드 사용</b> <br />
+	<b>request.getParameterMap() 메소드 사용</b> <br />
 	
 	<%
 	Map<String, String[]> parameterMap = request.getParameterMap();
