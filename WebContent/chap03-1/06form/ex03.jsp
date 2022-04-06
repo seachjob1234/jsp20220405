@@ -52,11 +52,12 @@
 	<form action="../../chap02/jsp03.jsp">
 		<input type="text" name="name" />
 		<input type="submit" />
-	</form>
 
+	</form>
+<hr/>
 	<h1>프로토콜이나 슬래쉬로 시작하는건 absolute path</h1>
 
-<hr/>
+
 <h1>action 속성 값 생략 : 현재 페이지</h1>
 <form action="">
 <input type="text" name = "age"/>
