@@ -25,7 +25,7 @@
 	
 	<form action="ex06.jsp">
 
-		<input type="checkbox" name="agree1" id="" />개인정보
+		<input type="checkbox" name="agree" id="" />개인정보
 		<br />
 		<input type="checkbox" name="accept" id="" />광고수신
 		<br />
