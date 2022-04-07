@@ -14,6 +14,7 @@ request.setCharacterEncoding("utf-8");
 <body>
 <%--include directive --%>
 <%--file 속성으로 이 위치에 포함될 파일의 경로를 작성 --%>
+<%--다른 파일으 ㅣ내용을 현재 위치에 삽입복붙 후 java로 전환 --%>
 <%@ include file="module/header01.jsp" %>
 <div>
 	<h1>Lorem.</h1>
