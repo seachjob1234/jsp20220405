@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.util.*" %>
+<%@ page import = "java.util.*, java.io.*" %>
 <%
 request.setCharacterEncoding("utf-8");
 %>   
@@ -12,6 +12,14 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
+<%
+BufferedReader rd = request.getReader();
 
+String line = "";
+
+while((line))
+
+
+%>
 </body>
 </html>

@@ -8,9 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
 
-%>
 <h1><%=request.getParameter("movie") %></h1>
 <h1><%=request.getParameter("actor") %></h1>
 </body>

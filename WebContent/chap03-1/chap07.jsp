@@ -12,25 +12,6 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<form action="ex24.jsp" >
-<input type="text" name="name" value="스티븐" />
-<br />
-<input type="text" name="job" value="닥터" />
-<br />
-<input type="text" name="movie" value="doctor" />
-<br />
-<input type="submit" value="전송" />
-</form>
-
-<form action="ex24.jsp" method = "post" >
-<input type="text" name="name" value="스티븐" />
-<br />
-<input type="text" name="job" value="닥터" />
-<br />
-<input type="text" name="movie" value="doctor" />
-<br />
-<input type="submit" value="전송" />
-</form>
 
 </body>
 </html>
