@@ -12,10 +12,15 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-	<p><%= request.getParameter("detail") %></p>
-</div>
+
+<h1>ex02from.jsp</h1>
+
+<jsp:forward page="ex02to.jsp">
+<jsp:param value="bts" name="group"/>
+<jsp:param value="sunjae" name="character"/>
+
+
+</jsp:forward>
+
 </body>
 </html>

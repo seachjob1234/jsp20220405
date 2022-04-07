@@ -4,6 +4,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>   
+<%@ page import="chap07.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,27 +13,16 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<%-- param 액션 태그의 파라미터는 include 되는 페이지에서만 사용 가능 --%>
-<jsp:include page="ex16.jsp">
-	<jsp:param value="999" name="age"/>
-</jsp:include>
+<!-- 오류없이 null 아닌 값 출력 -->
+<!-- ex09form.jsp작성 -->
 
-<div>
-	<p>ex15</p>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-</div>
-
-<hr />
-
-<%-- value 값이 너무 클 경우 --%>
 <%
-	String value1 = "너무 큰 값이 들어갈 경우 태그 body로 작성하면 안되고 expression사용";
+Car car1 =(Car) request.getAttribute("myCar");
+Car car2 =(Car) request.getAttribute("yourCar");
+
+
 %>
-<jsp:include page="ex16.jsp">
-	<jsp:param name="detail" value="<%= value1 %>"></jsp:param>
-</jsp:include>
-
-
+<p><%=car1.getName() %>:<%=car1.getPrice() %></p>
+<p><%=car2.getName() %>:<%=car2.getPrice() %></p>
 </body>
 </html>

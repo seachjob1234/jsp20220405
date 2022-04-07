@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*" %>
-<%
-request.setCharacterEncoding("utf-8");
-%>   
+<%@ page import = "chap07.*"%>
+<%request.setCharacterEncoding("utf-8");%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +12,6 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-	<p><%= request.getParameter("detail") %></p>
-</div>
+<h1>ex06to.jsp</h1>
 </body>
 </html>

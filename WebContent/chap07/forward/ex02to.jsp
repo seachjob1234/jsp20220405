@@ -12,10 +12,9 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-	<p><%= request.getParameter("detail") %></p>
-</div>
+<h1>ex02to.jsp</h1>
+<p><%=request.getParameter("group") %></p>
+<p><%=request.getParameter("character") %></p>
+<p><%=request.getParameter("movie") %></p>
 </body>
 </html>

@@ -3,7 +3,8 @@
 <%@ page import = "java.util.*" %>
 <%
 request.setCharacterEncoding("utf-8");
-%>   
+%> 
+<%@ page import= "chap07.*" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +13,12 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-	<p><%= request.getParameter("detail") %></p>
-</div>
+<%
+Object o1 = request.getAttribute("myCar");
+Car car = (Car) o1;
+
+%>
+
+<%=car.getName() %>:<%=car.getPrice() %>
 </body>
 </html>

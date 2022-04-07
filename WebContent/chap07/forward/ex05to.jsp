@@ -12,27 +12,13 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 </head>
 <body>
-<%-- param 액션 태그의 파라미터는 include 되는 페이지에서만 사용 가능 --%>
-<jsp:include page="ex16.jsp">
-	<jsp:param value="999" name="age"/>
-</jsp:include>
-
-<div>
-	<p>ex15</p>
-	<p><%= request.getParameter("age") %></p>
-	<p><%= request.getParameter("name") %></p>
-</div>
-
-<hr />
-
-<%-- value 값이 너무 클 경우 --%>
 <%
-	String value1 = "너무 큰 값이 들어갈 경우 태그 body로 작성하면 안되고 expression사용";
+Object obj = request.getAttribute("movieMap");
+Map<String, String> map = (Map<String, String>) obj;
 %>
-<jsp:include page="ex16.jsp">
-	<jsp:param name="detail" value="<%= value1 %>"></jsp:param>
-</jsp:include>
-
-
+<!-- http://localhost:8080/jsp20220405/chap07/forward/ex05from.jsp -->
+<%-- 오류없이 20, 21 줄 출력되도록 ex05from.jsp를 작성 --%>
+<p><%= map.get("movie1") %></p>
+<p><%= map.get("movie2") %></p>
 </body>
 </html>
