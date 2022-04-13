@@ -1,9 +1,34 @@
 package chap11;
 
+import java.util.List;
+
 public class Car {
 	private String model;
 	private int price;
 	private boolean available;
+	private List<String> owners;
+	/**
+	 * @return the owners
+	 */
+	public List<String> getOwners() {
+		return owners;
+	}
+
+	/**
+	 * @param owners the owners to set
+	 */
+	public void setOwners(List<String> owners) {
+		this.owners = owners;
+	}
+
+	public Car() {
+		
+	}
+	
+	public Car(String model,int price) {
+		this.model = model;
+		this.price = price;
+	}
 	
 	public void setAvailable(boolean available) {
 		this.available = available;
