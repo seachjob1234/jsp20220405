@@ -13,12 +13,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
-	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+<%-- List 타입의 객체를 page영역에 attribute로 넣고
+	c:forEach 사용해서 아래와 같이 출력되도록 코드 작성 
+ --%>
+<%
+List<String> list = new ArrayList<>();
+list.add("keyboard");
+list.add("computer");
+list.add("ram");
+list.add("ssd");
+list.add("monitor");
+
+pageContext.setAttribute("parts", list);
+
+%>
+
+<ul>
+	<c:forEach items="${parts }" var="part">
+		<li>${part }</li>
+	</c:forEach>
+</ul>
+<hr />
+<ul>
+	<li>keyboard</li>
+	<li>computer</li>
+	<li>ram</li>
+	<li>ssd</li>
+	<li>monitor</li>
+</ul>
 </body>
 </html>

@@ -13,12 +13,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+	String[] list = {"deadpool", "logan", "captain", "ironman", "blackpanther"};
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	pageContext.setAttribute("movies", list);
+	%>
+	
+	<ul>
+		<c:forEach items="${movies }" var="movie">
+			<li>${movie }</li>
+		</c:forEach>
+	</ul>
+	
+	<hr />
+	
+	<ul>
+		<li>deadpool</li>
+		<li>logan</li>
+		<li>captain</li>
+		<li>ironman</li>
+		<li>blackpanther</li>
+	</ul>
+	
 </body>
 </html>

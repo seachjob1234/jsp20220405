@@ -13,12 +13,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
-	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+<c:foreach began = "1" end = "5" var = "i" varStatus="status">
+<c:forEach begin="10" end="13" var="i" varStatus="status">
+		<p>begin, ${status.begin }</p>
+		<p>end, ${status.end }</p>
+		<p>count, ${status.count }</p>
+		<p>index, ${status.index }</p>
+		<p>first? ${status.first }</p>
+		<p>last? ${status.last }</p>
+		
+		<hr />
+		
+		<%-- 
+		varStatus : LoopTagStatus
+		몇번째 loop ?
+		몇번 index?
+		첫번째 loop ?
+		마지막 loop ?
+		
+		등의 상태정보를 가진 attribute 명 
+		 --%>
+	</c:forEach>
+
+</c:foreach>
 </body>
 </html>

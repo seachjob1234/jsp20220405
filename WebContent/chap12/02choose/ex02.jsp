@@ -13,12 +13,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<form>
+나이:<input type ="number" name = "age" id = ""/>
+
+<input type= "submit" value = "영화 추천받기" />
+
+
+</form>
+
+
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<c:choose>
+		<c:when test="${param.age >= 20 }">
+			<h1>데드풀입니다.</h1>
+		</c:when>
+		<c:when test="${param.age >= 12 }">
+			<h1>어벤져스입니다.</h1>
+		</c:when>
+		<c:when test="${param.age >= 7 }">
+			<h1>토이스토리입니다.</h1>
+		</c:when>
+		<c:otherwise>
+			<%-- otherwise 생략 가능 --%>
+			<h1>적절한 나이를 입력해입니다.</h1>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

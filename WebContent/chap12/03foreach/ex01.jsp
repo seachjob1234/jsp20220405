@@ -13,12 +13,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+	<h1>&lt;c:forEach&gt;</h1>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%-- begin~end 1씩 증가 --%>
+	<c:forEach begin="1" end="5">
+		<p>hello</p>
+	</c:forEach>
+	
+	<hr />
+	
+	<c:forEach begin="1" end="5" var="index">
+		<p>${index } : hi</p>
+	</c:forEach>
+	
 </body>
 </html>

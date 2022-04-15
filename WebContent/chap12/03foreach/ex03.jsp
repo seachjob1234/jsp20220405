@@ -13,12 +13,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<form>
+	form>
+		구구단 <input type="number" name="dan" /> 단
+		<input type="submit" value="출력" />
+	</form>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%-- 입력단 dan 파라미터 사용해서 구구단 출력 --%>
+	<%-- dan 이 2 ~ 9 아니면 "적절한 단을 입력해주세요" 출력 --%>
+	
+	<c:choose>
+		<c:when test="${param.dan >= 2 and param.dan <=9 }">
+			<c:forEach begin="1" end="9" var="i">
+				<p>${param.dan } X ${i } = ${param.dan * i }</p>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<p class="text-warning">적절한 단을 입력해주세요</p>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

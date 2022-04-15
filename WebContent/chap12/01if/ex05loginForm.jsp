@@ -13,12 +13,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
+	<h1>로그인</h1>
+
+	<c:if test="${param.error }" >
+		<p class="text-danger">아이디나 패스워드가 일치하지 않습니다.</p>
 	</c:if>
-	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+
+
+
+<h1>로그인 화면</h1>
+<form action="ex06loginProcess.jsp" method = "post">
+아이디 : <input type = "text" name = "id" value= "donald"/> <br/>
+암호 : <input type = "password" name = "pw"/> <br/>
+	<input type="submit" value="로그인" />	
+</form>
+
+
+
+
+
+
 </body>
 </html>

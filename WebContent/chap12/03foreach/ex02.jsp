@@ -13,12 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<h1>구구단 3단 출력</h1>
+	<%-- c:forEach 사용 --%>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<c:forEach begin="1" end="9" var="i">
+		<p>3 X ${i } = ${3 * i }</p>
+	</c:forEach>
 </body>
 </html>

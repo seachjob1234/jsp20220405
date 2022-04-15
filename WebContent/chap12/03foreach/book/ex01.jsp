@@ -3,7 +3,7 @@
 <%@ page import = "java.util.*" %>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%request.setCharacterEncoding("utf-8");%>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +13,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<h1>&lt;c:forEach&gt;</h1>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%-- begin~end 1씩 증가 --%>
+	<c:forEach begin="1" end="5">
+		<p>hello</p>
+	</c:forEach>
+	
+	<hr />
+	
+	<c:forEach begin="1" end="5" var="index">
+		<p>${index } : hi</p>
+	</c:forEach>
 </body>
 </html>

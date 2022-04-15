@@ -13,12 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+	String[] arr = {"spring", "summer", "fall", "winter"};
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	pageContext.setAttribute("list", arr);
+	%>
+	
+	<c:forEach items="${list }" var="s">
+		<h1>season : ${s }</h1>
+	</c:forEach>
 </body>
 </html>

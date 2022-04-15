@@ -13,12 +13,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
+<h1>메인 콘텐츠</h1>
+
+
+
+<c:if test = "${not empty sessionScope.username }" var = "logedIn">
+<h2>${sessionsScope.username }님 반갑습니다.</h2>
+<h2>맴버를 위한 컨텐츠!!</h2>
+<h3><a href = "ex08logout.jsp">로그아웃</h3>
+</c:if>
+
+
+
+<c:if test="${not logedIn }">
+		<h2>게스트를 위한 컨텐츠@@@</h2>
+		<h3><a href="ex05loginForm.jsp">로그인</a></h3>
 	</c:if>
-	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+
+
+
+
 </body>
 </html>

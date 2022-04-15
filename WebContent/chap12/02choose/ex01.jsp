@@ -13,12 +13,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<h1>&lt;c:choose&gt;, &lt;c:when&gt;, &lt;c:otherwise&gt;</h1>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%
+	pageContext.setAttribute("age", -30);
+	%>
+	
+	<c:choose>
+		<c:when test="${age >= 20 }">
+			<h1>성인입니다.</h1>
+		</c:when>
+		<c:when test="${age >= 13 }">
+			<h1>청소년입니다.</h1>
+		</c:when>
+		<c:when test="${age >= 7 }">
+			<h1>어린이입니다.</h1>
+		</c:when>
+		<c:otherwise>
+			<%-- otherwise 생략 가능 --%>
+			<h1>유아입니다.</h1>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

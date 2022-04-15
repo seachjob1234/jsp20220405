@@ -13,12 +13,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<h1>foreach에서 Set 탐색</h1>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%
+	Set<String> set = new HashSet<>();
+	set.add("ironman");
+	set.add("superman");
+	set.add("spiderman");
+	set.add("superman");
+	set.add("batman");
+	
+	pageContext.setAttribute("man", set);
+	%>
+	
+	<c:forEach items="${man }" var="item">
+		<h1>man : ${item }</h1>
+	</c:forEach>
 </body>
 </html>

@@ -13,12 +13,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+String id = request.getParameter("id");
+String pw = request.getParameter("pw");
+
+if(id.equals(pw)){
+	//로그인성공
+	session.setAttribute("username", id);
+	String loc = "ex07main.jsp";
+	response.sendRedirect(loc);
+}else{
+	String loc = "ex05loginForm.jsp?error=true";
+	response.sendRedirect(loc);
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+}
+
+%>
 </body>
 </html>

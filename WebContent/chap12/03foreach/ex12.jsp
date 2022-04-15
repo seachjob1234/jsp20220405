@@ -13,12 +13,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+	Map<String, String> map = new HashMap<>();
+	map.put("song", "butter");
+	map.put("group", "bts");
+	map.put("season", "spring");
+	map.put("framework", "struts");
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	pageContext.setAttribute("maps", map);
+	%>
+	
+	<c:forEach items="${maps }" var="item">
+		<h1>${item.key } : ${item.value }</h1>
+	</c:forEach>
 </body>
 </html>

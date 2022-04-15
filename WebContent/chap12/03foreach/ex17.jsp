@@ -3,7 +3,7 @@
 <%@ page import = "java.util.*" %>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%request.setCharacterEncoding("utf-8");%>
-
+<%@ page import = "chap11.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +13,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
-	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+<%
+List<Car> list = new ArrayList<>();
+list.add(new Car("volvo",3000));
+list.add(new Car("kia",2000));
+list.add(new Car("tesla",1000));
+list.add(new Car("benz",500));
+list.add(new Car("hyundai",2500));
+
+pageContext.setAttribute("cars", list);
+
+%>
+
+
+<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>모델</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${cars }" var="car" varStatus="status">
+				<tr>
+					<td>${status.count }</td>
+					<td>${car.model }</td>
+					<td>${car.price }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

@@ -13,6 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="ex04.jsp">
+		나이 : <input type="number" name="age" id="" /> <br />
+		<input type="submit" value="공포영화 관람가능?" />
+	</form>
+	
+	<%-- age 요청파라미터 값이 20보다 크거나 같을 때 
+	"관람가능" 출력 
+	아니면 "관람불가능" 출력 하는
+	ex04.jsp 작성 (jstl, el 사용) --%>
 </body>
 </html>

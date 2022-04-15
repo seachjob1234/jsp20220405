@@ -13,12 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<h1>구구단 2, 4, 6, 8 단 출력</h1>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<c:forEach begin="2" end="8" step="2" var="dan">
+		<h3>${dan }단</h3>
+		<c:forEach begin="1" end="9" var="i">
+			<p>${dan } X ${i } = ${dan * i }</p>
+		</c:forEach>
+	</c:forEach>
+</c:forEach>
 </body>
 </html>

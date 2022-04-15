@@ -13,12 +13,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+	<%
+	List<String> list = new ArrayList<>();
+	list.add("jimin");
+	list.add("rm");
+	list.add("suga");
+	list.add("jhope");
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	pageContext.setAttribute("bts", list);
+	%>
+	
+	<c:forEach items="${bts }" var="mem">
+		<p>${mem }</p>
+	</c:forEach>
+	
 </body>
 </html>

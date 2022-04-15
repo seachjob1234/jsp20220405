@@ -13,12 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+	String[] seasons = {"spring", "summer", "fall", "winter"};
+	pageContext.setAttribute("seasons", seasons);
+	%>
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	<%-- foreach 사용하여 아래 p요소 처럼 출력하는 코드 작성 --%>
+	
+	<p>spring, summer, fall, winter</p>
 </body>
 </html>

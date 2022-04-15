@@ -13,12 +13,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${param.age >= 20 }" var="canWatch">
-		<h1>관람 가능!</h1>
-	</c:if>
+<%
+	String[] names = {"captain", "ironman", "spider", "superman", "bat", "widow", "thor"};
 	
-	<c:if test="${not canWatch }">
-		<h1>관람 불가능!!</h1>
-	</c:if>
+	pageContext.setAttribute("names", names);
+	%>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<c:forEach items="${names }" var="name" begin="3" end="6" varStatus="status">
+				<tr>
+					<td>${status.count }</td>
+					<td>${name }</td>
+				</tr>
+			</c:forEach>
+		</tbody>	
+	</table>
 </body>
 </html>
