@@ -14,11 +14,11 @@
 </head>
 <body>
 	<c:if test = "${(not empty param.num1) and(not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 } + ${param.num2 } </h1>
+		<h1>${param.num1 } + ${param.num2 } = ${param.num1  + param.num2 } </h1>
 	</c:if>
 	
 	<c:if test = "${(not empty param.num1) or (not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 } + ${param.num2 } </h1>
+		<h1>${param.num1 } + ${param.num2 } = ${param.num1  + param.num2 } </h1>
 	</c:if>
 	
 </body>

@@ -14,7 +14,6 @@
 </head>
 <body>
 <form>
-	form>
 		구구단 <input type="number" name="dan" /> 단
 		<input type="submit" value="출력" />
 	</form>

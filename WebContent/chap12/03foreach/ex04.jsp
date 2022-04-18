@@ -13,6 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>forEach</h1>
+	
+	<c:forEach begin="1" end="10" step="2" var="i">
+		<p>hello : ${i }</p>
+	</c:forEach>
 </body>
 </html>

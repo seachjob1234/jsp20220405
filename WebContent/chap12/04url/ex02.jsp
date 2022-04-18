@@ -3,24 +3,28 @@
 <%@ page import = "java.util.*" %>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%request.setCharacterEncoding("utf-8");%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
 </head>
 <body>
-<h1>구구단 2, 4, 6, 8 단 출력</h1>
-	
-	<c:forEach begin="2" end="8" step="2" var="dan">
-		<h3>${dan }단</h3>
-		<c:forEach begin="1" end="9" var="i">
-			<p>${dan } X ${i } = ${dan * i }</p>
-		</c:forEach>
-	</c:forEach>
-
+	<a href="ex01.jsp">ex01상대경로</a>
+	<br />
+	<a href="/jsp20220405/chap12/04url/ex01.jsp">ex01(절대경로)</a>
+	<a href="${pageContext.request.contextPath }/chap12/04url/ex01.jsp">ex01.jsp</a>
+	<br />
+	<%--상대 경로 --%>
+	<c:url value =  "ex01.jsp" var = "ex01RelUrl"></c:url>
+	<a href="${ex01RelUrl}">ex01(상대경로 c:url 사용)</a>
+	<br />
+	<%--절대경로 --%>
+	<c:url value = "/chap12/04url/ex01.jsp" var = "ex01AbsUrl"></c:url>
+	<a href="${ex01AbsUrl }">ex01 (절대경로 c:url사용)</a>
 </body>
 </html>
