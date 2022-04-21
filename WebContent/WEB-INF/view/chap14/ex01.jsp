@@ -15,9 +15,9 @@
 <body>
 <h1>고객의 도시들</h1>
 <ul>
-<c:foreach items="${cities }" var="city"> 
-<li>${cities }</li>
-</c:foreach>
+<c:forEach items="${cities }" var="city"> 
+<li>${city }</li>
+</c:forEach>
 
 </ul>
 </body>
