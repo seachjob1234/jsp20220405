@@ -15,5 +15,12 @@
 	<input type="text" /><input type="text" />
 	
 	<input type="text" /><input type="text" />
+	
+	<c:if test="true" >
+	<p>hello</p>
+	</c:if>
+	<c:url value = "/board">
+	<c:param name="id" value="1"/>
+	</c:url>
 </body>
 </html>

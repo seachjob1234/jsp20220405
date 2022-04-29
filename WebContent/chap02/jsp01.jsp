@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>첫번째 jsp 파일</h1>
+<c:if test=true ><p>hello</p></c:if>
 </body>
 </html>
