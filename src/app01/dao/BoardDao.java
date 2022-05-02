@@ -23,7 +23,7 @@ public class BoardDao {
 		int result = 0;
 		// cunnection
 		// statment
-		try(PreparedStatement pstmt = con.prepareStatement(sql)){
+		try(PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getBody());
 			
@@ -31,6 +31,12 @@ public class BoardDao {
 			pstmt.setTimestamp(3, Timestamp.valueOf(now));
 			
 			result = pstmt.executeUpdate();
+			// 자동 생성된 키
+			try(ResultSet rs = pstmt.getGeneratedKeys();){
+				if(rs.next()) {
+				dto.setId(rs.getInt(1));
+				}
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

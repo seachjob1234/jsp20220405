@@ -21,48 +21,54 @@ import app01.dto.BoardDto;
 @WebServlet("/board/list")
 public class BoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private DataSource ds;  
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BoardListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-        
-    }
-    @Override
-    public void init() throws ServletException {
-    	ServletContext application = getServletContext();
-    	this.ds = (DataSource) application.getAttribute("dbpool");
-    }
+	private DataSource ds;
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//request parameter 가공
-		
-		//databace 관련작업 비즈니스 로직 처리
-		BoardDao dao = new BoardDao();
-		try(Connection con = ds.getConnection()){
-		List<BoardDto> list = dao.list(con);
-		
-		request.setAttribute("boardList", list);
-		
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		//request attribute setting
-	
-	
-		//forword or redirect
-		String path = "/WEB-INF/view/app01/list.jsp";
-		request.getRequestDispatcher(path).forward(request, response);		
+	public BoardListServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+
+	}
+
+	@Override
+	public void init() throws ServletException {
+		ServletContext application = getServletContext();
+		this.ds = (DataSource) application.getAttribute("dbpool");
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//request parameter 가공
+
+		//databace 관련작업 비즈니스 로직 처리
+		BoardDao dao = new BoardDao();
+		try (Connection con = ds.getConnection()) {
+			List<BoardDto> list = dao.list(con);
+
+			request.setAttribute("boardList", list);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//request attribute setting
+
+		//forword or redirect
+		String path = "/WEB-INF/view/app01/list.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
