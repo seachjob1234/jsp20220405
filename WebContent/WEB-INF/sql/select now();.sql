@@ -1,3 +1,3 @@
-select now();
+use mydb2;
 
-CREATE DATABASE w3schools;
+ SELECT ALL Board;
