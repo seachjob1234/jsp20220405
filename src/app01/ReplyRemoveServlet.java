@@ -53,23 +53,20 @@ public class ReplyRemoveServlet extends HttpServlet {
 		String boardId = request.getParameter("boardId");
 		
 		// 비지니스 로직 처리(db crud)
-		ReplyDao dao = new ReplyDao();
+	ReplyDao dao = new ReplyDao();
+		
 		boolean success = false;
 		try (Connection con = ds.getConnection()) {
-			
 			success = dao.delete(con, id);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// 결과 set
 		
+		// 결과세팅..(xxx)
 		
-		// forward/redirect
-		String location = request.getContextPath() +  "/board/get?id=" + boardId;
-	
-		response.sendRedirect(location);
-		
+		// forward / redirect
+		String loc = request.getContextPath() + "/board/get?id=" + boardId;
+		response.sendRedirect(loc);
 		
 		
 		

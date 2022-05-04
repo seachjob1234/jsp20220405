@@ -37,14 +37,32 @@
 
 		$("#delete-submit1").click(function(e) {
 			e.preventDefault();
+			if (confirm("삭제하시겠습니까?")) {
 			let form1 = $("#form1");
 			let actionAttr = "${appRoot}/board/remove";
 			form1.attr("action", actionAttr);
 
 			form1.submit();
+			}
 		});
+		
+		<%-- $("#delete-submit1").click(function(e) {
+			e.preventDefault();
+			
+			if (confirm("삭제하시겠습니까?")) {
+				let form1 = $("#form1");
+				let actionAttr = "${appRoot}/board/remove";
+				form1.attr("action", actionAttr);
+				
+				form1.submit();
+			}
+			
+		});--%>
+		
+		
 		//reply -edit -toggle 버튼클릭시 댓글 보여주는 div 숨기고,
 		//수정 form 보여주기
+		
 		$(".reply-edit-toggle-button").click(function(){
 			console.log("버튼클릭");
 			const replyId = $(this).attr("data-reply-id");
@@ -54,10 +72,10 @@
 			console.log(replyId);
 			console.log(displayDivId);
 			console.log(editFormId);
-			
+			if (confirm("삭제하시겠습니까?")) {
 			$(displayDivId).hide();
 			$(editFormId).show();
-			
+			}
 			
 		});
 		//reply-delete=button클릭시
